@@ -5,12 +5,9 @@
     [√] subclass map to simplify and isolate changes
     [√] reduce to those from original example
 
-[ ] Export
-    [ ] function which generates functional .json 
-    [ ] optionally export .png
-
-[ ] Lake
-    [ ] Create larger lake? Or detect large lake?
+[√] Export
+    [√] function which generates functional .json 
+    [√] optionally export .png
 
 [ ] Produce set of 100 Terrains
     [ ] Notebook and script to create more

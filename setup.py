@@ -12,4 +12,8 @@ setup(
     author="Adam Gaier",
     packages=find_packages(exclude=['images', 'notebooks']),
 
+    install_requires=[
+        'fire',
+    ],
+
 )
