@@ -15,14 +15,14 @@ def make_terrain_list(borders, biomes):
     return terrain_list
 
 def new_map(n_cells=150, n_rivers=10, min_river_height=0.6, 
-              min_water_ratio=0.25, lake_to_total_ratio=0.05, seed=None,
-              export="all", fname='map'):
+              ocean_to_total_ratio=0.4, lake_to_total_ratio=0.05, seed=None,
+              export=None, fname='map'):
     if seed is not None:
         np.random.seed(seed)
     g = Graph(N=n_cells, iterations=2)
     assign_terrain_types_to_graph(graph=g, 
-                                  min_water_ratio=min_water_ratio, 
-                                  lake_to_total_ratio=lake_to_total_ratio)
+                                  lake_to_total_ratio=lake_to_total_ratio,
+                                  ocean_to_total_ratio=ocean_to_total_ratio)
     g.assign_corner_elevations()
     g.redistribute_elevations()
     g.assign_center_elevations()
@@ -58,8 +58,10 @@ def new_map(n_cells=150, n_rivers=10, min_river_height=0.6,
         plt.subplots_adjust(wspace=0.05, hspace=0.15)
         plt.savefig(f'{fname}.png')    
 
-    if export == "fcn":
+    else:
         return g, terrain_list
+
+    print(f"[**] {fname} generated")
 
 fire.Fire(new_map)
 

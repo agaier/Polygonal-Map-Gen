@@ -10,10 +10,15 @@ setup(
     name="polymap",
     description="Procedural Generation of Polygon Abstract Map",
     author="Adam Gaier",
-    packages=find_packages(exclude=['images', 'notebooks']),
+    packages=find_packages(exclude=['images', 'notebooks', 'maps', ]),
 
     install_requires=[
         'fire',
+        'numpy',
+        'scipy',
+        'shapely',
+        'matplotlib',
+        'plotly'
     ],
 
 )
